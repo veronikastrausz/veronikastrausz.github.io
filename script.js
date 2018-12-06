@@ -350,7 +350,7 @@ function showHandCards() {
 }
 
 function gameStart(aNameArray) {
-  let baseURL = "http://nowaunoweb.azurewebsites.net";
+  let baseURL = "https://nowaunoweb.azurewebsites.net";
   let request = $.ajax({
     url: baseURL + "/api/Game/Start", // WOHIN?da wollen wir posts hinschicken!! könnte CASE SENSITIVE sein!!!wird sich nicht ändern, kann man in variable packen --> baseURL
     method: 'POST', //WAS FÜR EINE METHODE? was wollen wir machen?? NICHT GET!!
@@ -383,7 +383,7 @@ function gameStart(aNameArray) {
 }
 
 function getTopCard() {
-  var baseURL = "http://nowaunoweb.azurewebsites.net";
+  var baseURL = "https://nowaunoweb.azurewebsites.net";
   let request = $.ajax({
     url: baseURL + "/api/Game/TopCard/" + gameID,
     method: 'GET',
@@ -400,7 +400,7 @@ function getTopCard() {
 function playCard(value, color, wildColor) {
 
   console.log('Wanted to play: Value', value, ' Color ', color, ' WildColor: ', wildColor);
-  var baseURL = "http://nowaunoweb.azurewebsites.net";
+  var baseURL = "https://nowaunoweb.azurewebsites.net";
   // /api/Game/PlayCard/{id}?value={value}&color={color}&wildColor={wildColor}
   //              {id}?value="3"&color="Blue"&wildColor=''
   //              {id}?value="Draw4"&color="Black"&wildColor="Blue"
@@ -447,7 +447,7 @@ function playCard(value, color, wildColor) {
 
 function drawCard() {
 
-  var baseURL = "http://nowaunoweb.azurewebsites.net";
+  var baseURL = "https://nowaunoweb.azurewebsites.net";
   let request = $.ajax({
     url: baseURL + "/api/Game/DrawCard/" + gameID,
     method: 'PUT',
@@ -471,7 +471,7 @@ function drawCard() {
 
 // Game/DrawCard/{id}
 function getHandOfPlayer(playerName) {
-  var baseURL = "http://nowaunoweb.azurewebsites.net";
+  var baseURL = "https://nowaunoweb.azurewebsites.net";
   let request = $.ajax({
     url: baseURL + "/api/Game/GetCards/" + gameID + "?playerName=" + playerName,
     method: 'GET',
