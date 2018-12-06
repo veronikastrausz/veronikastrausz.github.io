@@ -1,0 +1,131 @@
+body {
+  //background-color: rgb(0, 77, 0);
+  background-image: url(pics/greenfilth01.jpg);
+}
+
+.card-body {
+background-color: rgba(230, 230, 255, 0.5) !important;
+}
+
+#player-handcards .card-body {
+background-color: rgb(230, 230, 255);
+}
+
+.current-player>.card-body>.row>.col>ul>li>img:hover{
+   transform: scale(1.1, 1.1);
+}
+
+#stack>img:hover{
+    transform: scale(1.1, 1.1);
+}
+
+.alert {
+  font-weight: bold;
+  color: red;
+}
+
+.uno-deck-hand {
+  height: 80px;
+}
+
+.uno-title {
+  font-size: 50px;
+  font-weight: bold;
+  font-family: Comic Sans MS, Comic Sans, cursive;
+  color: black;
+
+  animation-name: color-changing;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+}
+
+.wrong-player>li>img {
+  animation-name: translate-right-left;
+  animation-duration: 2s;
+  animation-delay: 0.25s;
+}
+
+.wrong-card {
+  animation-name: rotate-right-left;
+  animation-duration: 5s;
+}
+
+/*Überschrift-Animation
+*/
+@keyframes color-changing {
+  from {
+    color: black;
+  }
+
+  20% {
+    color: #FFCD34;
+  }
+
+  40% {
+    color: #009A00;
+  }
+
+  60% {
+    color: #0066CB;
+  }
+
+  80% {
+    color: #D30035;
+  }
+
+  to {
+    color: black;
+  }
+}
+
+@keyframes rotate-right-left {
+  from {
+    transform: rotate(0deg);
+  }
+
+  20% {
+    transform: rotate(20deg);
+  }
+
+  40% {
+    transform: rotate(-20deg);
+  }
+
+  60% {
+    transform: rotate(20deg);
+  }
+
+  80% {
+    transform: rotate(-20deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes translate-right-left {
+  from {
+    transform: translate(0%, 0%);
+  }
+
+  20% {
+    transform: translate(15%, 0%);
+  }
+
+  40% {
+    transform: translate(-15%, 0%);
+  }
+
+  60% {
+    transform: translate(15%, 0%);
+  }
+
+  80% {
+    transform: translate(-15%, 0%);
+  }
+
+  to {
+    transform: translate(0%, 0%);
+  }
+}
