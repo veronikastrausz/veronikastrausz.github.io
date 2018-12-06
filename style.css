@@ -3,8 +3,12 @@ body {
   background-image: url(pics/greenfilth01.jpg);
 }
 
+.img-fluid{
+  max-width: 100%;
+}
+
 .card-body {
-background-color: rgba(230, 230, 255, 0.5) !important;
+background-color: rgba(230, 230, 255, 1) ;
 }
 
 #player-handcards .card-body {
@@ -28,6 +32,7 @@ background-color: rgb(230, 230, 255);
   height: 80px;
 }
 
+
 .uno-title {
   font-size: 50px;
   font-weight: bold;
@@ -49,83 +54,61 @@ background-color: rgb(230, 230, 255);
   animation-name: rotate-right-left;
   animation-duration: 5s;
 }
+.winner-dance-left{
+    animation-name: rotate-left-right;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+
+}
+.winner-dance-right{
+    animation-name: rotate-right-left;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+
+}
 
 /*Überschrift-Animation
 */
 @keyframes color-changing {
-  from {
-    color: black;
-  }
+  from {color: black;}
 
-  20% {
-    color: #FFCD34;
-  }
+  20% {color: #FFCD34;}
+  40% {color: #009A00;}
+  60% {color: #0066CB;}
+  80% {color: #D30035;}
 
-  40% {
-    color: #009A00;
-  }
-
-  60% {
-    color: #0066CB;
-  }
-
-  80% {
-    color: #D30035;
-  }
-
-  to {
-    color: black;
-  }
+  to {color: black;}
 }
 
 @keyframes rotate-right-left {
-  from {
-    transform: rotate(0deg);
-  }
+  from {transform: rotate(0deg);}
 
-  20% {
-    transform: rotate(20deg);
-  }
+  20% {transform: rotate(20deg);}
+  40% {transform: rotate(-20deg);}
+  60% {transform: rotate(20deg);}
+  80% {transform: rotate(-20deg);}
 
-  40% {
-    transform: rotate(-20deg);
-  }
+  to {transform: rotate(0deg);}
+}
+@keyframes rotate-left-right{
+  from{transform: rotate(0deg);}
 
-  60% {
-    transform: rotate(20deg);
-  }
+  20%{transform: rotate(-20deg);}
+  40%{transform: rotate(20deg);}
+  60%{transform: rotate(-20deg);}
+  80%{transform: rotate(20deg);}
 
-  80% {
-    transform: rotate(-20deg);
-  }
-
-  to {
-    transform: rotate(0deg);
-  }
+  to{transform: rotate(0deg);}
 }
 
+
 @keyframes translate-right-left {
-  from {
-    transform: translate(0%, 0%);
-  }
+  from {transform: translate(0%, 0%);}
 
-  20% {
-    transform: translate(15%, 0%);
-  }
+  20% {transform: translate(15%, 0%);}
+  40% {transform: translate(-15%, 0%);}
+  60% {transform: translate(15%, 0%);}
+  80% {transform: translate(-15%, 0%);}
 
-  40% {
-    transform: translate(-15%, 0%);
-  }
-
-  60% {
-    transform: translate(15%, 0%);
-  }
-
-  80% {
-    transform: translate(-15%, 0%);
-  }
-
-  to {
-    transform: translate(0%, 0%);
-  }
+  to {transform: translate(0%, 0%);}
 }

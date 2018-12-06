@@ -281,7 +281,7 @@ function reloadHandCards() {
 
 function showTopCard() {
   let showCard = convertCardObjectToImgPath(currentTopcard.Value, currentTopcard.Color);
-  $("<img class='mr-2' src='" + showCard + "'> </img>").appendTo('#topcard');
+  $("<img class='mr-2 img-fluid' src='" + showCard + "'> </img>").appendTo('#topcard');
 }
 
 function showHandCards() {
@@ -295,28 +295,28 @@ function showHandCards() {
           let handCardToAppend = convertCardObjectToImgPath(players[playerIndex].Cards[handCardIndex].Value, players[playerIndex].Cards[handCardIndex].Color);
 
           let liItem = $("<li class='list-inline-item'> </li>").appendTo('#handcards1');
-          $("<img class='mr-2' src='" + handCardToAppend + "'> </img>").data("value", players[playerIndex].Cards[handCardIndex].Value).data("color", players[playerIndex].Cards[handCardIndex].Color).appendTo(liItem);
+          $("<img class='mr-2 img-fluid' src='" + handCardToAppend + "'> </img>").data("value", players[playerIndex].Cards[handCardIndex].Value).data("color", players[playerIndex].Cards[handCardIndex].Color).appendTo(liItem);
         }
       } else if (1 == playerIndex && 1 > $('#handcards2').children().length) {
         for (let handCardIndex = 0; handCardIndex < players[playerIndex].Cards.length; handCardIndex++) {
           let handCardToAppend = convertCardObjectToImgPath(players[playerIndex].Cards[handCardIndex].Value, players[playerIndex].Cards[handCardIndex].Color);
 
           let liItem = $("<li class='list-inline-item'> </li>").appendTo('#handcards2');
-          $("<img class='mr-2' src='" + handCardToAppend + "'> </img>").data("value", players[playerIndex].Cards[handCardIndex].Value).data("color", players[playerIndex].Cards[handCardIndex].Color).appendTo(liItem);
+          $("<img class='mr-2 img-fluid' src='" + handCardToAppend + "'> </img>").data("value", players[playerIndex].Cards[handCardIndex].Value).data("color", players[playerIndex].Cards[handCardIndex].Color).appendTo(liItem);
         }
       } else if (2 == playerIndex && 1 > $('#handcards3').children().length) {
         for (let handCardIndex = 0; handCardIndex < players[playerIndex].Cards.length; handCardIndex++) {
           let handCardToAppend = convertCardObjectToImgPath(players[playerIndex].Cards[handCardIndex].Value, players[playerIndex].Cards[handCardIndex].Color);
 
           let liItem = $("<li class='list-inline-item'> </li>").appendTo('#handcards3');
-          $("<img class='mr-2' src='" + handCardToAppend + "'> </img>").data("value", players[playerIndex].Cards[handCardIndex].Value).data("color", players[playerIndex].Cards[handCardIndex].Color).appendTo(liItem);
+          $("<img class='mr-2 img-fluid' src='" + handCardToAppend + "'> </img>").data("value", players[playerIndex].Cards[handCardIndex].Value).data("color", players[playerIndex].Cards[handCardIndex].Color).appendTo(liItem);
         }
       } else if (3 == playerIndex && 1 > $('#handcards4').children().length) {
         for (let handCardIndex = 0; handCardIndex < players[playerIndex].Cards.length; handCardIndex++) {
           let handCardToAppend = convertCardObjectToImgPath(players[playerIndex].Cards[handCardIndex].Value, players[playerIndex].Cards[handCardIndex].Color);
 
           let liItem = $("<li class='list-inline-item'> </li>").appendTo('#handcards4');
-          $("<img class='mr-2' src='" + handCardToAppend + "'> </img>").data("value", players[playerIndex].Cards[handCardIndex].Value).data("color", players[playerIndex].Cards[handCardIndex].Color).appendTo(liItem);
+          $("<img class='mr-2 img-fluid' src='" + handCardToAppend + "'> </img>").data("value", players[playerIndex].Cards[handCardIndex].Value).data("color", players[playerIndex].Cards[handCardIndex].Color).appendTo(liItem);
         }
       }
     } else {
@@ -324,25 +324,25 @@ function showHandCards() {
         for (let handCardIndex = 0; handCardIndex < players[playerIndex].Cards.length; handCardIndex++) {
 
           let liItem = $("<li class='list-inline-item'> </li>").appendTo('#handcards1');
-          $("<img class='mr-2' src='cards/back.svg'> </img>").appendTo(liItem);
+          $("<img class='mr-2 img-fluid' src='cards/back.svg'> </img>").appendTo(liItem);
         }
       } else if (1 == playerIndex && 1 > $('#handcards2').children().length) {
         for (let handCardIndex = 0; handCardIndex < players[playerIndex].Cards.length; handCardIndex++) {
 
           let liItem = $("<li class='list-inline-item'> </li>").appendTo('#handcards2');
-          $("<img class='mr-2' src='cards/back.svg'> </img>").appendTo(liItem);
+          $("<img class='mr-2 img-fluid' src='cards/back.svg'> </img>").appendTo(liItem);
         }
       } else if (2 == playerIndex && 1 > $('#handcards3').children().length) {
         for (let handCardIndex = 0; handCardIndex < players[playerIndex].Cards.length; handCardIndex++) {
 
           let liItem = $("<li class='list-inline-item'> </li>").appendTo('#handcards3');
-          $("<img class='mr-2' src='cards/back.svg'> </img>").appendTo(liItem);
+          $("<img class='mr-2 img-fluid' src='cards/back.svg'> </img>").appendTo(liItem);
         }
       } else if (3 == playerIndex && 1 > $('#handcards4').children().length) {
         for (let handCardIndex = 0; handCardIndex < players[playerIndex].Cards.length; handCardIndex++) {
 
           let liItem = $("<li class='list-inline-item'> </li>").appendTo('#handcards4');
-          $("<img class='mr-2' src='cards/back.svg'> </img>").appendTo(liItem);
+          $("<img class='mr-2 img-fluid' src='cards/back.svg'> </img>").appendTo(liItem);
         }
       }
     }
@@ -415,15 +415,15 @@ function playCard(value, color, wildColor) {
     console.log("Played matching card / tried to play card: no match.");
     console.log("Respone: playCard ", data);
 
-    if(0 == data.Cards.length)
-    {
-      endOfGame();
-    }
 
     if ("WrongColor" == data.error) {
       //  Try again
 
     } else {
+      if(0 == data.Cards.length)
+      {
+        endOfGame();
+      }
       currentPlayerReloadRequired()
       if ("Black" == color) {
         reloadTopCard(value, wildColor);
@@ -585,35 +585,33 @@ function convertCardObjectToImgPath(cardValue, cardColor) {
 
 //neu
 function endOfGame() {
-  //ToDo: wenn der nextplayer und der letzte spieler übereinstimmen
-  //UND ein spieler (der spieler) keine Karten mehr hat,
-  //ist das Spiel zu ende
 
   $('#modal-end-of-game').modal('show');
 
-  //TODO: das einfügen funnzt nicht...
-  let somecode = "somecode";
+  let endOfGameList = null;
+  let winner = 0;
 
-    if (!$('#modal-modal-end-of-game span').hasClass('winner1'))
-    {
-      let appendWinner = $('#modal-modal-end-of-game span');
-      appendWinner.append("<div> blabla players name: </div>" + currentPlayer )
-    }
+  $('#modal-end-of-game .modal-body').append("<ul id='list-of-winners' class='list-group'></ul>");
 
-    if (!$('#modal-modal-end-of-game span').hasClass('winner2'))
+  for(let playerIndex = 0; playerIndex < 4; playerIndex++)
+  {
+    console.log("Player: ", players[playerIndex].Player);
+    if(currentPlayer == players[playerIndex].Player)
     {
-        let appendWinner = $('#modal-modal-end-of-game span')
-    appendWinner.append("<div> blabla players score: </div>" + somecode)
+      $("#list-of-winners").append("<li class='list-group-item'><h2> <i class='fas fa-trophy pr-2 winner-dance-left'></i> " + players[playerIndex].Player + "<i class='fas fa-trophy pl-2 winner-dance-right'></h2></i></li>");
     }
+    else {
+      $("#list-of-winners").append("<li class='list-group-item'><h2> " + players[playerIndex].Player + "</h2></li>");
+
+    }
+  }
 
   document.getElementById("sound-winner").play();
   //jQuery
   //$('#sound-winner').play();
 }
 
-//neu: funktioniert :)
+
 function restartGame() {
-  //window.location.reload(true);
-  //  document.reload();
   location.reload();
 }

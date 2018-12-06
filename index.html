@@ -9,6 +9,9 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
+  <!-- Fontawsome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
   <!-- Eigenes CSS -->
   <link rel="stylesheet" href="style.css">
   </link>
@@ -109,13 +112,13 @@
     <!--Modal für Spielende-->
     <div id="modal-end-of-game" class="modal" data-backdrop="static" tabindex="-1" role="dialog">
       <!--data-backdrop="false" unterbindet, dass das Modal durch klick in das Hauptfenster entfert werden kann; mit static ist auch noch der Hintergrund ausgeblendet -->
-      <div class="modal-dialog" role="document">
+      <div class="modal-dialog text-center" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title">End of Game</h5>
           </div>
           <div class="modal-body">
-            <p>The winner is<span class="winner1"> </span> with a score of <span class="winner2"> </span>.</p>
+
           </div>
           <div class="modal-footer">
             <button type="button" id="button-restart-game" class="btn btn-success">Restart</button>
@@ -140,7 +143,7 @@
           <div class="card-body">
             <div class="row text-center">
               <div id="stack" class="col">
-                <img class="mr-2" src="cards/back.svg"></img>
+                <img class="mr-2 img-fluid" src="cards/back.svg"></img>
               </div>
             </div>
             <div class="row text-center">
