@@ -601,7 +601,7 @@ function endOfGame() {
       $("#list-of-winners").append("<li class='list-group-item'><h2> <i class='fas fa-trophy pr-2 winner-dance-left'></i> " + players[playerIndex].Player + "<i class='fas fa-trophy pl-2 winner-dance-right'></h2></i></li>");
     }
     else {
-      $("#list-of-winners").append("<li class='list-group-item'><h2> " + players[playerIndex].Player + "</h2></li>");
+      $("#list-of-winners").append("<li class='list-group-item'><h2> " + players[playerIndex].Player + ", Score: " + players[playerIndex].Score + "</h2></li>");
 
     }
   }
