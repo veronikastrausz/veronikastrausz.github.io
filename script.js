@@ -583,7 +583,6 @@ function convertCardObjectToImgPath(cardValue, cardColor) {
 
 }
 
-//neu
 function endOfGame() {
 
   $('#modal-end-of-game').modal('show');
@@ -598,7 +597,8 @@ function endOfGame() {
     console.log("Player: ", players[playerIndex].Player);
     if(currentPlayer == players[playerIndex].Player)
     {
-      $("#list-of-winners").append("<li class='list-group-item'><h2> <i class='fas fa-trophy pr-2 winner-dance-left'></i> " + players[playerIndex].Player + "<i class='fas fa-trophy pl-2 winner-dance-right'></h2></i></li>");
+      /*TODO: Animation funzt noch nicht für winner!!!*/
+      $("#list-of-winners").append("<li class='list-group-item'><h2> <i class='fas fa-trophy pr-2 winner-dance-left'></i><p id='winner-text'>" + players[playerIndex].Player + "</p><i class='fas fa-trophy pl-2 winner-dance-right'></h2></i></li>");
     }
     else {
       $("#list-of-winners").append("<li class='list-group-item'><h2> " + players[playerIndex].Player + ", Score: " + players[playerIndex].Score + "</h2></li>");

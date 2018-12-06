@@ -32,8 +32,8 @@ background-color: rgb(230, 230, 255);
   height: 80px;
 }
 
-
-.uno-title {
+/*TODO: funzt noch nicht für winner!!!*/
+.uno-title, #winner-text {
   font-size: 50px;
   font-weight: bold;
   font-family: Comic Sans MS, Comic Sans, cursive;
