@@ -146,48 +146,48 @@ function currentPlayerReloadRequired() {
 function reloadBadge() {
 
   $("#player-handcards span").remove();
-  $(".card").removeClass("current-player");
+  $(".card-custom").removeClass("current-player");
 
   if ($("#player-handcards button").hasClass("btn-success")) {
     $("#player-handcards button").removeClass("btn-success");
-    $("#player-handcards button").addClass("btn-dark");
+    $("#player-handcards button").addClass("btn-warning");
   }
 
   if (currentPlayer == players[0].Player) {
-    if ($("#playerBadge1").hasClass("btn-dark")) {
-      $("#playerBadge1").removeClass("btn-dark");
+    if ($("#playerBadge1").hasClass("btn-warning")) {
+      $("#playerBadge1").removeClass("btn-warning");
       $("#playerBadge1").addClass("btn-success");
-      $("#playerBadge1").closest(".card").addClass("current-player");
+      $("#playerBadge1").closest(".card-custom").addClass("current-player");
     }
     $("<span class='badge badge-light ml-2'>It's your turn!</span>").appendTo('#playerBadge1');
     reloadRequiredPlayer1 = true;
     reloadHandCards();
   }
   else if (currentPlayer == players[1].Player) {
-    if ($("#playerBadge2").hasClass("btn-dark")) {
-      $("#playerBadge2").removeClass("btn-dark");
+    if ($("#playerBadge2").hasClass("btn-warning")) {
+      $("#playerBadge2").removeClass("btn-warning");
       $("#playerBadge2").addClass("btn-success");
-      $("#playerBadge2").closest(".card").addClass("current-player");
+      $("#playerBadge2").closest(".card-custom").addClass("current-player");
     }
     $("<span class='badge badge-light ml-2'>It's your turn!</span>").appendTo('#playerBadge2');
     reloadRequiredPlayer2 = true;
     reloadHandCards();
   }
   else if (currentPlayer == players[2].Player) {
-    if ($("#playerBadge3").hasClass("btn-dark")) {
-      $("#playerBadge3").removeClass("btn-dark");
+    if ($("#playerBadge3").hasClass("btn-warning")) {
+      $("#playerBadge3").removeClass("btn-warning");
       $("#playerBadge3").addClass("btn-success");
-      $("#playerBadge3").closest(".card").addClass("current-player");
+      $("#playerBadge3").closest(".card-custom").addClass("current-player");
     }
     $("<span class='badge badge-light ml-2'>It's your turn!</span>").appendTo('#playerBadge3');
     reloadRequiredPlayer3 = true;
     reloadHandCards();
   }
   else if (currentPlayer == players[3].Player) {
-    if ($("#playerBadge4").hasClass("btn-dark")) {
-      $("#playerBadge4").removeClass("btn-dark");
+    if ($("#playerBadge4").hasClass("btn-warning")) {
+      $("#playerBadge4").removeClass("btn-warning");
       $("#playerBadge4").addClass("btn-success");
-      $("#playerBadge4").closest(".card").addClass("current-player");
+      $("#playerBadge4").closest(".card-custom").addClass("current-player");
     }
     $("<span class='badge badge-light ml-2'>It's your turn!</span>").appendTo('#playerBadge4');
     reloadRequiredPlayer4 = true;
@@ -236,8 +236,10 @@ function createPlayers() {
     console.log("Player 4 " + player4 + " joined the Game");
 
     nameArray = inputFields.map(function() {
-      return this.value;
-    }).get();
+        return this.value;
+        }).get();
+
+    console.log("Wir nutzen unser nameArray");
 
     gameStart(nameArray);
 
@@ -598,7 +600,7 @@ function endOfGame() {
     if(currentPlayer == players[playerIndex].Player)
     {
       /*TODO: Animation funzt noch nicht für winner!!!*/
-      $("#list-of-winners").append("<li class='list-group-item'><h2> <i class='fas fa-trophy pr-2 winner-dance-left'></i><p id='winner-text'>" + players[playerIndex].Player + "</p><i class='fas fa-trophy pl-2 winner-dance-right'></h2></i></li>");
+      $("#list-of-winners").append("<li class='list-group-item'><h2> <i class='fas fa-trophy pr-4 winner-dance-left'></i><span id='winner-text'>" + players[playerIndex].Player + "</span><i class='fas fa-trophy pl-4 winner-dance-right'></h2></i></li>");
     }
     else {
       $("#list-of-winners").append("<li class='list-group-item'><h2> " + players[playerIndex].Player + ", Score: " + players[playerIndex].Score + "</h2></li>");

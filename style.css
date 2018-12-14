@@ -7,22 +7,33 @@ body {
   max-width: 100%;
 }
 
-.card-body {
-background-color: rgba(230, 230, 255, 1) ;
+.card-custom-title {
+background-color: rgba(230, 230, 255, 0.5) ;
+border-radius: 5px;
+padding: 10px;
+
+}
+
+.card-custom {
+    padding: 5px;
+}
+
+#stick-to-the-program{
+  position: fixed;
+  top: 20%;
+}
+
+#stack>img:hover{
+  transform: scale(1.1, 1.1);
 }
 
 #player-handcards .card-body {
 background-color: rgb(230, 230, 255);
 }
 
-.current-player>.card-body>.row>.col>ul>li>img:hover{
-   transform: scale(1.1, 1.1);
+.current-player>.row>.col>ul>li>img:hover{
+  transform: scale(1.1, 1.1);
 }
-
-#stack>img:hover{
-    transform: scale(1.1, 1.1);
-}
-
 .alert {
   font-weight: bold;
   color: red;
