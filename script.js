@@ -26,6 +26,7 @@ $(document).ready(function() {
   $("#modal-new-color").modal('hide');
   $("#button-restart-game").click(restartGame); //neu
 });
+
 //clickhandler
 $("#button-start-game").click(createPlayers);
 
