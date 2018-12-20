@@ -613,7 +613,7 @@ function endOfGame() {
   }
 
 //  document.getElementById("sound-winner").play();
-$(audio#sound-winner)[0}.play();
+$("audio#sound-winner")[0].play();
 
 }
 
