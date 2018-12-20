@@ -86,7 +86,8 @@ $("#player-handcards").on("click", "img", function() {
 
     if (!$(this).closest("ul").hasClass("wrong-player")) {
       $(this).closest("ul").addClass("wrong-player");
-      document.getElementById("sound-wrong").play();
+    //  document.getElementById("sound-wrong").play();
+      $("audio#sound-wrong")[0].play();
       //$("#sound-wrong").play();
     }
 
@@ -113,7 +114,8 @@ function chooseNewColor() {
   console.log("New Color = ", newColor);
   $("#modal-new-color").modal('hide');
   playCard(currentValue, currentColor, newColor);
-  document.getElementById("sound-change-color").play();
+//  document.getElementById("sound-change-color").play();
+    $("audio#sound-change-color")[0].play();
 }
 
 function setPlayerNames() {
@@ -469,7 +471,9 @@ function drawCard() {
     console.log("Error in request: ", msg, request);
   });
 
-  document.getElementById("sound-drawcard").play();
+  $("audio#sound-drawcard")[0].play();
+
+
 }
 
 // Game/DrawCard/{id}
@@ -503,7 +507,6 @@ function getHandOfPlayer(playerName) {
     }
 
     reloadHandCards();
-    //neu: da endOfGame aufrufen??
   });
   request.fail(function(msg) {
     console.log("Error in request: ", msg, request);
@@ -600,7 +603,7 @@ function endOfGame() {
     console.log("Player: ", players[playerIndex].Player);
     if(currentPlayer == players[playerIndex].Player)
     {
-      /*TODO: Animation funzt noch nicht für winner!!!*/
+
       $("#list-of-winners").append("<li class='list-group-item'><h2> <i class='fas fa-trophy pr-4 winner-dance-left'></i><span id='winner-text'>" + players[playerIndex].Player + "</span><i class='fas fa-trophy pl-4 winner-dance-right'></h2></i></li>");
     }
     else {
@@ -609,9 +612,9 @@ function endOfGame() {
     }
   }
 
-  document.getElementById("sound-winner").play();
-  //jQuery
-  //$('#sound-winner').play();
+//  document.getElementById("sound-winner").play();
+$(audio#sound-winner)[0}.play();
+
 }
 
 
